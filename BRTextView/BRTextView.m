@@ -110,7 +110,9 @@
 
 - (CGSize)intrinsicContentSize {
     CGFloat height = [self sizeThatFits:CGSizeMake(self.bounds.size.width, MAXFLOAT)].height;
-    height = height > self.maxHeight ? self.maxHeight : height;
+    if (self.maxHeight > 0) {
+        height = height > self.maxHeight ? self.maxHeight : height;
+    }
     return CGSizeMake(UIViewNoIntrinsicMetric, height);
 }
 
@@ -127,6 +129,7 @@
 
 - (void)inputDidChange{
     self.lblPlaceholder.hidden = self.text.length > 0;
+    [self invalidateIntrinsicContentSize];
 }
 
 #pragma mark - Private

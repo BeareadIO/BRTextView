@@ -86,6 +86,7 @@
     self.layoutManager.allowsNonContiguousLayout = NO;
     [self updateFrame];
     [self addObserverOrAction];
+    [self invalidateIntrinsicContentSize];
 }
 
 - (void)dealloc {
@@ -110,6 +111,9 @@
 
 - (CGSize)intrinsicContentSize {
     CGFloat height = [self sizeThatFits:CGSizeMake(self.bounds.size.width, MAXFLOAT)].height;
+    if (self.minHeight > 0) {
+        height = height > self.minHeight ? height : self.minHeight;
+    }
     if (self.maxHeight > 0) {
         height = height > self.maxHeight ? self.maxHeight : height;
     }
@@ -138,6 +142,7 @@
     _maxHeight = self.maximumNumberOfLines * self.font.lineHeight + lineSpacing * self.maximumNumberOfLines + self.textInsets.top + self.textInsets.bottom;
     _minHeight = self.font.lineHeight + lineSpacing + self.textInsets.top + self.textInsets.bottom ;
     [self setNeedsLayout];
+    [self invalidateIntrinsicContentSize];
 }
 
 #pragma mark - Setter & Getter

@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rxf-LS-dJP" customClass="BRTextView">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Rxf-LS-dJP" customClass="BRTextView">
                                 <rect key="frame" x="15" y="50" width="345" height="42.70703125"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -27,10 +27,11 @@
                                         <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="string" keyPath="ib_textInsets" value="{10,0,10,0}"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="sdfjlksdf"/>
                                 </userDefinedRuntimeAttributes>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oZh-Aa-zDu" customClass="BRTextView">
-                                <rect key="frame" x="15" y="117" width="345" height="22.70703125"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oZh-Aa-zDu" customClass="BRTextView">
+                                <rect key="frame" x="15" y="92.5" width="345" height="22.70703125"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -38,12 +39,13 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="maximumNumberOfLines">
                                         <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="sdfjlksdfjsdf"/>
                                 </userDefinedRuntimeAttributes>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="oZh-Aa-zDu" firstAttribute="top" secondItem="Rxf-LS-dJP" secondAttribute="bottom" constant="30" id="BUf-6V-2TX"/>
+                            <constraint firstItem="oZh-Aa-zDu" firstAttribute="top" secondItem="Rxf-LS-dJP" secondAttribute="bottom" id="BUf-6V-2TX"/>
                             <constraint firstItem="oZh-Aa-zDu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="DOT-Kg-0RX"/>
                             <constraint firstItem="Rxf-LS-dJP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="gtt-kj-DBG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rxf-LS-dJP" secondAttribute="trailing" constant="15" id="rIz-aC-YY8"/>

@@ -95,12 +95,12 @@
 
 - (void)updateFrame {
     self.lblPlaceholder.frame = CGRectMake(self.textContainerInset.left, self.textContainerInset.top, self.contentSize.width - self.textContainerInset.left - self.textContainerInset.right, self.contentSize.height - self.textContainerInset.top - self.textContainerInset.bottom);
-    self.underline.frame = CGRectMake(0, self.bounds.size.height - 0.5 + self.bounds.origin.y, self.bounds.size.width, 0.5);
+    self.underline.frame = CGRectMake(0, self.bounds.size.height - 1 + self.bounds.origin.y, self.bounds.size.width, 1);
 }
 
 - (void)prepareForInterfaceBuilder {
     self.lblPlaceholder.frame = CGRectMake(self.textContainerInset.left, self.textContainerInset.top, self.contentSize.width - self.textContainerInset.left - self.textContainerInset.right, self.contentSize.height - self.textContainerInset.top - self.textContainerInset.bottom);
-    self.underline.frame = CGRectMake(0, self.bounds.size.height - 0.5 + self.bounds.origin.y, self.bounds.size.width, 0.5);
+    self.underline.frame = CGRectMake(0, self.bounds.size.height - 1 + self.bounds.origin.y, self.bounds.size.width, 1);
 }
 
 - (void)addObserverOrAction {
@@ -197,6 +197,11 @@
     [super setFont:font];
     self.lblPlaceholder.font = font;
     [self updateMinAndMaxHeight];
+}
+
+- (void)setText:(NSString *)text {
+    [super setText:text];
+    self.lblPlaceholder.hidden = text.length > 0;
 }
 #pragma mark - Getter
 
